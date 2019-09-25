@@ -1,0 +1,13 @@
+[Unit]
+Description=Shadowsocks LegendSock Server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/shadowsocks-legendsock
+ExecStart=/opt/shadowsocks-legendsock/shadowsocks-legendsock -noderate 1 -dbhost localhost -dbuser legendsock -dbpass legendsock -dbname legendsock -syninterval 300
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
